@@ -11,5 +11,4 @@ RUN pip install requests itchat
 RUN mkdir /opt/django/
 ADD django.tar.gz /opt/django/
 
-#ENTRYPOINT uwsgi --http 0.0.0.0:8001 --file /opt/django/$PROJECTNAME/wsgi.py --chdir /opt/django/ --static-map=/static=$STATIC_PATH
-ENTRYPOINT python /opt/django/manager.py runserver 0.0.0.0:8001
+ENTRYPOINT python /opt/django/manage.py runserver 0.0.0.0:8001
